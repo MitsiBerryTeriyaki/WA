@@ -1,0 +1,140 @@
+:root {
+    --primary: #63b1b0;
+    --light: #dfdfdf;
+    --dark: #0e0e0e;
+    --alt: #f1961f;
+    --back: #2c2c2c;
+    --textback: #a9a9a9;
+}
+
+html {
+    background: var(--back);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    display: grid;
+    grid-gap: 0px;
+    grid-template-rows: 15% 5% 10% auto 60px;
+    grid-template-columns: 25% auto auto;
+    grid-template-areas: 
+    'head head head'
+    'subh subh subh'
+    'side main main'
+    'side bulk bulk'
+    'foot foot foot'
+}
+/* ID Styling */
+
+#Name {
+    flex: 1;
+    margin: 5px;
+}
+
+#Remarks {
+    flex: 1;
+    margin: 5px;
+}
+
+h1 {
+    padding: 0px;
+    margin: 0 5px;
+    font-size: 50px;
+}
+header {
+    grid-area: head;
+    background: var(--light);
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+.sub-container {
+    grid-area: subh;
+    display: flex;
+    align-items: center;
+
+    background: var(--dark);
+    color: var(--alt)
+}
+
+.nav-container {
+    grid-area: main;
+}
+
+.sidebar-container {
+    grid-area: side;
+    background-image: url(https://i.postimg.cc/qMkr9rZD/bg.jpg);
+    min-height: 500px;
+}
+
+.bulk-container {
+    grid-area: bulk;
+    background: var(--textback);
+
+    text-align: center;
+    padding: 10px;
+    font-family: 'Inconsolata', monospace;
+}
+
+footer {
+    grid-area: foot;
+    background: #0e0e0e;
+    text-align: right;
+    padding: 0 20px;
+    color: var(--light);
+}
+
+.btn {
+    background: #63b1b0;
+    color: #0e0e0e;
+    padding: 0.5rem 1.2rem;
+    text-decoration: none;
+    border: 0;
+}
+
+.nav-container ul{
+    display: grid;
+    grid-gap: 10px;
+    padding: 0;
+    list-style: none;
+    grid-template-columns: repeat(5, 1fr);
+}
+.nav-container a {
+    display: block;
+    grid-gap: 10px;
+    text-decoration: none;
+    padding: 0.5rem;
+    text-align: center;
+    color: var(--dark);
+    text-transform: uppercase;
+    font-size: 15px;
+    border-radius: 2px;
+
+}
+
+.nav-container a:hover{
+    background: var(--light)
+}
+
+footer a {
+    text-decoration: none;
+    color: var(--textback);
+}
+
+@media(max-width: 750px) {
+    body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+    }
+
+    .nav-container ul {
+        display: flex;
+        flex-direction: column;
+        
+    }
+    .nav-container a{
+        margin: 2px;
+    }
+}
